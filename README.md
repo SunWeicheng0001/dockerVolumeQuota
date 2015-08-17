@@ -8,3 +8,8 @@
 3. 修改runconfig/parse.go中关于解析的部分
 4. 修改daemon/Volumes.go中mountPoint，增加Size
 5. 修改daemon/volume_unix.go, 使之可以根据命令行初始化mountPoint中Size部分
+
+####2015/8/15
+1. 修改runconfig/parse.go，fix了加入逗号会出现两个挂载点的漏洞
+2. 修改daemon/volume_unix.go，放弃了原来采用的已经再到废弃的container.Volumes，换成了container.MountPoints
+3. 修改daemon/volume_unix.go，修改了MonitorVolumesSize()，使到达一定大小时会发出警告
